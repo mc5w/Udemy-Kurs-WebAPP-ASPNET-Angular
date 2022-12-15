@@ -19,7 +19,6 @@ namespace API.Controllers
         {
             this.context = context;
             this.tokenService = tokenService;
-            this.context = context;
         }
 
         [HttpPost("register")] // POST: api/account/register

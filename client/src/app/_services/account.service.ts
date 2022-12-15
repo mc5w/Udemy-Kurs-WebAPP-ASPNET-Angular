@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, ShareReplayConfig } from 'rxjs';
+import { BehaviorSubject, map} from 'rxjs';
 import { User } from '../_models/user';
 
 @Injectable({
@@ -46,9 +46,5 @@ export class AccountService {
   logout() {
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
-  }
-
-  public getUserName(){
-    return this.currentUserSource.value?.username;
   }
 }
