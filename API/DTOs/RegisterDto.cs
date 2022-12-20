@@ -12,6 +12,7 @@ namespace API.DTOs
         public string userName { get; set; }         
         
         [Required]
+        [StringLength(8, MinimumLength = 4)]
         public string passWord { get; set; }
     }
 }

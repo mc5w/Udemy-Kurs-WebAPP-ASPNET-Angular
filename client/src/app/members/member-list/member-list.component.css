@@ -1,0 +1,199 @@
+/* #006A9C: 3.1:1 -> #161616 | 5.4:1 -> #f5f5f5 | 5.9:1 -> #ffffff */
+/* z. B. Hintergrundbild body, Formulare */
+/* = .one.column;
+ */
+/** Helferlein für den Umstieg von bottom- auf top-margins */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Helvetica Neue", "HelveticaNeue", Arial, Helvetica, Geneva, sans-serif;
+    font-size: 81.25%;
+   /* 13px / 16px */
+    line-height: 1.538461538;
+   /* 20px / 13px */
+    color: #161616;
+    background: #bfbfbf;
+}
+.page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+@supports (display: grid) {
+    /* display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(6, 1fr); */
+}
+.gba-kachel {
+    background-color: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 24px;
+    margin-right: 12px;
+    margin-left: 12px;
+}
+.gba-kachel .padding-all-unit {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex: 0 0 100%;
+    flex: 1 0 auto;
+    max-width: 100%;
+    width: 100%;
+}
+@supports (display: grid) {
+    /* grid-column: auto / span 6;
+    margin: 0 !important; */
+}
+.gba-kachel--xs {
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+@media (min-width: 480px) {
+    .gba-kachel--xs {
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        width: calc((100% / 2) - 48px);
+   }
+}
+@media (min-width: 768px) {
+    .gba-kachel--xs {
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        width: calc((100% / 3) - 72px);
+   }
+}
+@supports (display: grid) {
+    /* grid-column: auto / span 6;
+    width: auto; */
+    @media (min-width: 480px) {
+        .gba-kachel--xs {
+            grid-column: auto / span 3;
+       }
+   }
+    @media (min-width: 768px) {
+        .gba-kachel--xs {
+            grid-column: auto / span 2;
+       }
+   }
+}
+.gba-kachel--m {
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    width: calc(100% - 24px);
+}
+@media (min-width: 480px) {
+    .gba-kachel--m {
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        width: calc((100% - 48px) / 2);
+   }
+}
+@media (min-width: 768px) {
+    .gba-kachel--m {
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        width: calc(((100% - 48px) / 3) * 2);
+   }
+}
+@supports (display: grid) {
+    /* grid-column: auto / span 6;
+    width: auto; */
+    @media (min-width: 480px) {
+        .gba-kachel--m {
+            grid-column: auto / span 3;
+       }
+   }
+    @media (min-width: 768px) {
+        .gba-kachel--m {
+            grid-column: auto / span 4;
+       }
+   }
+}
+.gba-kachel--l {
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    width: calc(100% - 24px);
+}
+@supports (display: grid) {
+    /* grid-column: auto / span 6;
+    width: auto; */
+}
+.gba-kachel__titel {
+    font-size: 1.3076923077em;
+   /* 17px / 13px */
+    line-height: 1.235294118;
+   /* 21px / 17px */
+    border-top: 3px solid #ff8c00;
+    color: #616161;
+    padding-top: 12px;
+}
+.gba-kachel__body {
+    margin-top: 12px;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    width: 100%;
+}
+.gba-kachel__body > * {
+    margin-bottom: 0 !important;
+}
+.gba-kachel__body > * + * {
+    margin-top: 8px;
+}
+.gba-kachel__body > * {
+    flex-basis: 100%;
+    max-width: 100%;
+    width: 100%;
+    background: hotpink;
+}
+.gba-kachel__footer {
+    margin-top: 24px;
+}
+.gba-button {
+    background: transparent;
+    border: 1px solid;
+    border-bottom-right-radius: 9999em;
+    border-top-right-radius: 9999em;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: inherit;
+    letter-spacing: 0.025em;
+    line-height: 1;
+    padding: 9px 15px 9px;
+    text-decoration: none;
+    transition: all 0.1s ease-in;
+}
+.gba-button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+.gba-button--standard, a.gba-button--standard {
+    background-color: #515151;
+    border-color: #515151;
+    color: white;
+    font-weight: 700;
+}
+.gba-button--standard:focus, a.gba-button--standard:focus, .gba-button--standard:hover, a.gba-button--standard:hover {
+    background-color: #ff8c00;
+    border-color: #ff8c00;
+    color: #161616;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
+ul li {
+    font-weight: bold;
+    padding-left: 28px;
+    background: url(https://dhabxh0mfl5ru.cloudfront.net/assets-version-1502787865/bundles/gbawebsite/img/bullet.png) no-repeat left 0.35em;
+}
+.padding-all-unit {
+    padding: 24px;
+}

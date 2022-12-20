@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-member-list',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent {
+
+  constructor(private router: Router) {
+    
+    
+  }
+  public goToBildungsprogramm(){
+    this.router.navigateByUrl('/');
+  }
 
 }
